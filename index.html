@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Generador de contraseñas</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>
+        Generador<span class="container__texto-azul"> de Contraseñas</span>
+      </h1>
+      <div class="container__campo">
+        <label for="cantidad" class="texto__parrafo"
+          >Cantidad de carácteres:
+        </label>
+        <input
+          name="cantidad"
+          class="container__input"
+          type="number"
+          id="cantidad"
+        />
+        <button class="boton" id="generar" onclick="generate()">Generar</button>
+      </div>
+      <p>O valida tu propia contraseña:</p>
+      <div class="container_result">
+        <input
+          oninput="validation()"
+          class="container__contrasena"
+          type="text"
+          id="contrasena"
+          placeholder="contraseña"
+        />
+        <a href="#" onclick="copy()" class="copy">Copiar</a>
+        <p class="validation-alert"></p>
+        <button class="boton" onclick="reset()">Reiniciar</button>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
