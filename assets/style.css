@@ -1,6 +1,8 @@
 :root{
     --primary-color: #8fa4cc;
     --second-color: #4b566b;
+    --font1: "Chakra Petch", sans-serif;
+    --font2: "Inter", sans-serif;
 }
 
 * {
@@ -37,20 +39,20 @@ body::before {
 }
 
 h1 {
-  font-family: "Chakra Petch", sans-serif;
+  font-family: var(--font1);
   font-size: 72px;
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
-  padding: 2rem;
+  
 }
 
 p{
-    font-family: "Inter", sans-serif;
+    font-family: var(--font2);
 }
 
 .container {
-  padding: 2em;
+  padding: 1.5em;
   display: flex;
   flex-direction: column;
   row-gap: 1.5em;
@@ -79,6 +81,13 @@ p{
     
 }
 
+.char-alert{
+  display: none;
+  color: red;
+  font-family: var(--font2);
+  font-weight: bold;
+}
+
 .texto__parrafo {
   color: #fff;
   font-family: "Inter";
@@ -97,7 +106,7 @@ p{
   padding: 2rem;
   font-size: 24px;
   font-weight: 700;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font2);
 }
 
 input#contrasena.container__contrasena {
@@ -108,7 +117,7 @@ input#contrasena.container__contrasena {
   display: none;
   color: red;
   font-weight: bold;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font2);
 }
 
 .container_result {
@@ -160,7 +169,7 @@ input#contrasena.container__contrasena {
   padding: 2rem;
   font-size: 24px;
   font-weight: 700;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font2);
 }
 
 .validationCheck{
@@ -174,7 +183,7 @@ input#contrasena.container__contrasena {
 
 .copy{
     display: none;
-    font-family: "Inter", sans-serif;
+    font-family: var(--font2);
     color: var(--primary-color);
     font-weight: bold;
     width: 6%;

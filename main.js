@@ -14,17 +14,30 @@ const generate = () => {
 
   // hacer verificaciones del input de cantidad de caracteres que tendra el password
 
-  if (!char) {
-    alert("Ingrese una cantidad de caracteres para su contraseña");
+  const charAlert = document.querySelector(".char-alert");
+  const passwordInput = document.querySelector(".container__contrasena");
+
+  if (!char || typeof char != "number") {
+    charAlert.style.display = "flex";
+    charAlert.textContent = "Ingrese una cantidad de caracteres valida";
+    passwordInput.classList.remove("validationNone");
+    passwordInput.classList.remove("validationCheck");
   } else if (char < 8) {
-    alert("La contraseña debe tener al menos 8 caracteres");
-  } else if (char > 15) {
-    alert("La contraseña no puede tener más de 15 caracteres");
+    charAlert.style.display = "flex";
+    charAlert.textContent = "La contraseña debe tener almenos 8 caracteres";
+    passwordInput.classList.remove("validationNone");
+    passwordInput.classList.remove("validationCheck");
+  } else if (char > 24) {
+    charAlert.style.display = "flex";
+    charAlert.textContent = "La contraseña no puede tener más de 24 caracteres";
+    passwordInput.classList.remove("validationNone");
+    passwordInput.classList.remove("validationCheck");
   } else {
+    charAlert.style.display = "none";
     //creamos la variable que almacenara el password
     let password = "";
 
-    //iteramos el string de caracteres para generar el numero de caracteres aleatorios indicado por el usuario
+    //Iteramos el string de caracteres para generar el numero de caracteres aleatorios indicado por el usuario
 
     for (let i = 0; i < char; i++) {
       let random = Math.floor(Math.random() * abc.length);
@@ -79,7 +92,7 @@ const validation = () => {
       res.classList.add("validationNone");
 
       //Que tenga menos de 15 caracteres
-    } else if (password.length > 15) {
+    } else if (password.length > 24) {
       alert.textContent = "La contraseña no puede tener más de 15 caracteres";
       alert.style.color = "red";
       alert.style.display = "flex";
@@ -159,12 +172,16 @@ const copy = () => {
 
 const reset = () => {
   const passwordInput = document.querySelector(".container__contrasena");
+  const charAmount = document.querySelector(".container__input");
 
+  charAmount.value = null;
   passwordInput.value = null;
 
   const copy = document.querySelector(".copy");
   const validationAlert = document.querySelector(".validation-alert");
   const containerPass = document.querySelector(".container__contrasena");
+  const charAlert = document.querySelector(".char-alert");
+  charAlert.style.display = "none";
   validationAlert.style.display = "none";
   copy.style.display = "none";
   containerPass.classList.remove("validationNone");
