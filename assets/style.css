@@ -26,7 +26,7 @@ body {
 }
 
 body::before {
-  background-image: url("img/seguridad.png");
+  background-image: url("img/passwordBack.svg");
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
